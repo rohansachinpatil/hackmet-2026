@@ -1268,6 +1268,7 @@
         grid-template-columns: 1fr;
       }
 
+      /* ── Tablet ── */
       .tracks-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -1336,31 +1337,81 @@
         display: none;
       }
 
+      .hamburger {
+        display: flex;
+      }
+
       section {
         padding: 48px 16px;
       }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      div[style*="grid-template-columns:repeat(3,1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
     }
 
+    /* ── Mobile ── */
     @media (max-width: 600px) {
+      .hero {
+        padding: 80px 16px 48px;
+        min-height: auto;
+      }
+
+      .hero-badge {
+        font-size: 7px;
+        padding: 4px 10px;
+        margin-bottom: 20px;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+
+      .hero-btns a {
+        width: 100%;
+        text-align: center;
+        font-size: 7px;
+      }
+
+      .hero-terminal {
+        width: 100%;
+        margin-top: 32px;
+        font-size: 9px;
+      }
+
       .tracks-grid {
         grid-template-columns: 1fr;
       }
 
       .judges-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
       .sponsors-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .countdown-wrap {
+        gap: 8px;
+      }
+
       .countdown-unit {
-        min-width: 70px;
-        padding: 16px 12px;
+        min-width: 64px;
+        padding: 12px 8px;
       }
 
       .countdown-num {
-        font-size: 20px;
+        font-size: 18px;
+      }
+
+      .countdown-label {
+        font-size: 7px;
       }
 
       .form-row {
@@ -1376,6 +1427,188 @@
         gap: 8px;
         text-align: center;
       }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step {
+        border-right: none !important;
+        border-top: none !important;
+        border-bottom: 2px solid var(--border-dark);
+      }
+
+      .process-step:last-child {
+        border-bottom: none;
+      }
+
+      .prizes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 40px 16px;
+      }
+
+      .section-title {
+        font-size: clamp(18px, 7vw, 28px);
+      }
+
+      .tl-item {
+        padding-left: 20px;
+      }
+
+      .about-card-body {
+        padding: 12px;
+      }
+
+      .info-row {
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
+      .register-section {
+        padding: 48px 16px;
+      }
+
+      .reg-form {
+        padding: 20px 16px;
+      }
+
+      .faq-q-text {
+        font-size: 9px;
+      }
+
+      .marquee-track span {
+        font-size: 9px;
+        padding: 0 12px;
+      }
+
+      .stat-num {
+        font-size: 22px;
+      }
+
+      .stat-desc {
+        font-size: 8px;
+      }
+
+      .stat-item {
+        min-width: 50%;
+        padding: 16px 8px;
+      }
+
+      .judge-card {
+        width: 100%;
+      }
+
+      div[style*="grid-template-columns:repeat(3,1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+
+      .footer-brand p {
+        font-size: 10px;
+      }
+
+      .nav-cta {
+        font-size: 7px;
+        padding: 6px 10px;
+      }
+    }
+
+    /* ── Very Small Phones (320px) ── */
+    @media (max-width: 380px) {
+      .nav-logo {
+        font-size: 9px;
+      }
+
+      .countdown-unit {
+        min-width: 56px;
+        padding: 10px 6px;
+      }
+
+      .countdown-num {
+        font-size: 16px;
+      }
+
+      .hero h1 {
+        font-size: 16px;
+      }
+
+      .sponsors-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ── Hamburger Menu ── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      margin-left: 12px;
+      background: none;
+      border: none;
+      z-index: 200;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      transition: all 200ms ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 2px solid var(--border-dark);
+      z-index: 99;
+      flex-direction: column;
+      padding: 16px;
+      gap: 0;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--primary-dark);
     }
   </style>
 </head>
@@ -1394,7 +1627,21 @@
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="#register" class="nav-cta">[ REGISTER ]</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#tracks" onclick="closeMobileMenu()">Tracks</a>
+    <a href="#prizes" onclick="closeMobileMenu()">Prizes</a>
+    <a href="#timeline" onclick="closeMobileMenu()">Timeline</a>
+    <a href="#judges" onclick="closeMobileMenu()">Judges</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#register" onclick="closeMobileMenu()" style="color:var(--primary-dark);font-weight:700;">[ REGISTER NOW ]</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero" style="padding-top:120px;">
@@ -2155,6 +2402,20 @@
       setTimeout(() => {
         btn.textContent = '[ ✓ SUBMITTED — CHECK YOUR EMAIL ]';
       }, 1200);
+    }
+
+    // Hamburger menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    function closeMobileMenu() {
+      hamburgerBtn.classList.remove('open');
+      mobileMenu.classList.remove('open');
     }
   </script>
 </body>
