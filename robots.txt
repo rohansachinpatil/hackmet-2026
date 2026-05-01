@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rohansachinpatil.github.io/hackmet-2026/sitemap.xml
