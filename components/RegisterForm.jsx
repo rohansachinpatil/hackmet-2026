@@ -48,7 +48,7 @@ export default function RegisterForm() {
       // 2. Open Razorpay Checkout
       const options = {
         key: data.keyId,
-        amount: '29900', // ₹299
+        amount: '100', // ₹1
         currency: 'INR',
         name: 'HACK::MET 2026',
         description: 'Team Registration Fee',
@@ -159,7 +159,7 @@ export default function RegisterForm() {
         </div>
         
         <button type="submit" disabled={loading} className="btn-primary" style={{ width: '100%', textAlign: 'center', fontSize: '10px', padding: '14px', opacity: loading ? 0.7 : 1 }}>
-          {loading ? '[ PROCESSING... ]' : '[ SUBMIT REGISTRATION — ₹299 / TEAM ]'}
+          {loading ? '[ PROCESSING... ]' : '[ SUBMIT REGISTRATION — ₹1 / TEAM ]'}
         </button>
         
         <p className="register-note">Secure payment via Razorpay · All participants receive confirmation within 24 hrs · Refund policy: 100% refund if event is cancelled</p>

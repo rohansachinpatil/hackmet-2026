@@ -20,9 +20,9 @@ export async function POST(request) {
       return Response.json({ error: 'All fields are required.' }, { status: 400 });
     }
 
-    // Create Razorpay order (₹299 = 29900 paise)
+    // Create Razorpay order (₹1 = 100 paise)
     const order = await razorpay.orders.create({
-      amount: 29900,
+      amount: 100,
       currency: 'INR',
       receipt: `hackmet_${Date.now()}`,
       notes: { teamName, leadName, email },

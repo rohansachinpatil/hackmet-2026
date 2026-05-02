@@ -28,7 +28,7 @@ async function sendConfirmationEmail(registration) {
           <tr><td style="padding: 8px 0; color: #888;">Team Size</td><td style="color: #fff;">${registration.teamSize} Members</td></tr>
           <tr><td style="padding: 8px 0; color: #888;">Track</td><td style="color: #fff;">${registration.track}</td></tr>
           <tr><td style="padding: 8px 0; color: #888;">College</td><td style="color: #fff;">${registration.college}</td></tr>
-          <tr><td style="padding: 8px 0; color: #888;">Payment</td><td style="color: #4CAF50;">₹299 Paid ✓</td></tr>
+          <tr><td style="padding: 8px 0; color: #888;">Payment</td><td style="color: #4CAF50;">₹1 Paid ✓</td></tr>
         </table>
         <hr style="border-color: #333; margin: 24px 0;" />
         <p>📅 <strong>Date:</strong> 12–13 July 2026</p>
