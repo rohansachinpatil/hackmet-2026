@@ -8,9 +8,9 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
+      <nav>
         <a href="https://www.ecell-met.tech/" target="_blank" rel="noopener noreferrer" className="nav-logo">
-          E-CELL<span style={{ color: 'var(--primary)' }}>::</span>MET
+          E-CELL<span>::</span>MET
         </a>
         <ul className="nav-links">
           <li><a href="#about">About</a></li>

@@ -49,7 +49,7 @@ export default function Prizes() {
         </div>
       </div>
 
-      <div style={{ marginTop: '32px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+      <div className="special-awards-grid" style={{ marginTop: '32px', display: 'grid', gap: '16px' }}>
         <div className="about-card">
           <div className="terminal-bar"><span className="t-dot g"></span><span style={{ marginLeft: '8px' }}>SPECIAL_AWARDS.log</span></div>
           <div className="about-card-body">

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Sponsors() {
   return (
     <section>
@@ -9,11 +7,9 @@ export default function Sponsors() {
       <div className="sponsors-grid" style={{ gridTemplateColumns: '1fr' }}>
         <div className="sponsor-tile" style={{ border: 'none', padding: '60px 20px' }}>
           <div className="sponsor-logo-box" style={{ width: '100%', maxWidth: '400px', height: '150px', padding: '20px', background: 'transparent', border: 'none' }}>
-            <Image 
+            <img 
               src="/baratisponsorlogo.png" 
               alt="Baratiz" 
-              width={400} 
-              height={150} 
               style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} 
             />
           </div>
