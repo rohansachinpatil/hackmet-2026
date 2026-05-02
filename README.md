@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HACK::MET 2026 🚀
 
-## Getting Started
+**Live Website:** [https://hackmet-2026.vercel.app/](https://hackmet-2026.vercel.app/)
 
-First, run the development server:
+Welcome to the official repository for **HACK::MET 2026**, the biggest student innovation sprint in Maharashtra hosted by **E-Cell MET Institute of Engineering, Nashik**.
 
+## 🛠 Tech Stack
+This project was migrated from a static HTML template to a robust, full-stack Next.js web application.
+- **Frontend**: Next.js (App Router), React, standard CSS (Space Mono & Press Start 2P fonts for retro-terminal styling).
+- **Backend**: Next.js API Routes (Serverless).
+- **Database**: MongoDB (Mongoose) for secure registration data storage.
+- **Payments**: Razorpay integration for team registration fees.
+- **Email**: Nodemailer for automated confirmation receipts.
+
+## 💻 Running Locally
+
+First, make sure you configure your `.env.local` file with the required environment variables:
+```env
+MONGODB_URI=your_mongodb_connection_string
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+EMAIL_USER=your_gmail_address
+EMAIL_PASS=your_gmail_app_password
+```
+
+Then, run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Deployment
+This project is deployed using [Vercel](https://vercel.com/). Environment variables are configured securely in the Vercel dashboard, and the Razorpay client is lazily initialized within the API route to ensure seamless build compilation.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built with ♥ by E-Cell MET Tech Team*
