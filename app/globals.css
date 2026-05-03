@@ -140,6 +140,62 @@ nav {
   text-align: center;
 }
 
+/* ── Hero headline block ── */
+.hero-headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 40px;
+  padding-top: 80px;
+}
+
+.hero-headline__name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(72px, 10vw, 120px);
+  color: var(--primary);
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+.hero-headline__sep {
+  color: var(--text-muted);
+}
+
+.hero-headline__year {
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(48px, 7vw, 80px);
+  color: var(--text);
+  line-height: 1.2;
+  letter-spacing: 4px;
+}
+
+.hero-headline__tagline {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(14px, 1.6vw, 22px);
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+/* Staggered entrance animation */
+@keyframes heroFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-headline__anim {
+  opacity: 0;
+  animation: heroFadeSlideUp 600ms ease-out forwards;
+}
+
 .hero-badge {
   font-family: 'Space Mono', monospace;
   font-size: 10px;
@@ -1423,6 +1479,27 @@ footer {
   }
 }
 
+/* ── Headline tablet ── */
+@media (max-width: 768px) {
+  .hero-headline {
+    padding-top: 48px;
+    margin-bottom: 28px;
+  }
+
+  .hero-headline__name {
+    font-size: clamp(44px, 9vw, 72px);
+  }
+
+  .hero-headline__year {
+    font-size: clamp(32px, 6vw, 56px);
+  }
+
+  .hero-headline__tagline {
+    font-size: clamp(11px, 2.5vw, 16px);
+    letter-spacing: 1px;
+  }
+}
+
 /* ── Mobile ── */
 @media (max-width: 600px) {
   .hero {
@@ -1446,6 +1523,27 @@ footer {
     width: 100%;
     text-align: center;
     font-size: 7px;
+  }
+
+  .hero-headline {
+    padding-top: 32px;
+    margin-bottom: 20px;
+    gap: 2px;
+  }
+
+  .hero-headline__name {
+    font-size: clamp(32px, 12vw, 52px);
+    letter-spacing: 0;
+  }
+
+  .hero-headline__year {
+    font-size: clamp(24px, 8vw, 40px);
+    letter-spacing: 2px;
+  }
+
+  .hero-headline__tagline {
+    font-size: clamp(9px, 2.8vw, 14px);
+    letter-spacing: 0.5px;
   }
 
   .hero-terminal {

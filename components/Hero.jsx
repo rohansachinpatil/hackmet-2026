@@ -1,6 +1,20 @@
 export default function Hero() {
   return (
     <section className="hero" style={{ paddingTop: '120px' }}>
+
+      {/* ── DOMINANT HEADLINE BLOCK ── */}
+      <div className="hero-headline" id="hero-headline">
+        <span className="hero-headline__name hero-headline__anim" style={{ animationDelay: '0ms' }}>
+          HACK<span className="hero-headline__sep">::</span>MET
+        </span>
+        <span className="hero-headline__year hero-headline__anim" style={{ animationDelay: '150ms' }}>
+          2026
+        </span>
+        <span className="hero-headline__tagline hero-headline__anim" style={{ animationDelay: '300ms' }}>
+          48 Hours. 6 Tracks. One Leaderboard.
+        </span>
+      </div>
+
       <div className="hero-badge">▶ REGISTRATIONS OPEN &nbsp;·&nbsp; <span>DEADLINE: 20 JUNE 2026</span></div>
       <h1>HACK THE <span className="accent">FUTURE.</span><br />BUILD WHAT<br />MATTERS.</h1>
       <p className="hero-sub">E-CELL MET HACKATHON 2026</p>
