@@ -978,13 +978,121 @@ section {
 }
 
 .reg-form {
-  max-width: 500px;
+  max-width: 620px;
   margin: 40px auto 0;
   text-align: left;
 }
 
+/* ── Dynamic member rows ── */
+.member-row {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease-out, opacity 300ms ease-out, padding 300ms ease-out;
+  padding: 0 0;
+}
+
+.member-row--visible {
+  max-height: 600px;
+  opacity: 1;
+  padding: 20px 0 4px;
+}
+
+.member-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #888888;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.member-badge__lead {
+  color: var(--primary);
+}
+
+.form-hint {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: #666666;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.form-label--optional {
+  color: #666666;
+  font-weight: 400;
+  font-size: 8px;
+  letter-spacing: 0;
+}
+
 .form-group {
   margin-bottom: 20px;
+  position: relative;
+}
+
+/* ── Inline validation states ── */
+.field-valid .form-input,
+.field-valid .form-select {
+  border-left: 3px solid #4CAF50;
+}
+
+.field-invalid .form-input,
+.field-invalid .form-select {
+  border-left: 3px solid #e00000;
+}
+
+.field-icon {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  font-size: 12px;
+  pointer-events: none;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.field-icon--valid {
+  color: #4CAF50;
+}
+
+.field-icon--invalid {
+  color: #e00000;
+}
+
+.field-error {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #e00000;
+  margin-top: 4px;
+  animation: fieldErrorIn 200ms ease forwards;
+}
+
+@keyframes fieldErrorIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.char-counter {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #666666;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.char-counter--over {
+  color: #e00000;
 }
 
 .form-label {

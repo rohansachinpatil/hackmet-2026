@@ -12,23 +12,39 @@ async function sendConfirmationEmail(registration) {
     },
   });
 
+  const lead = registration.members.find((m) => m.isLead) || registration.members[0];
+
+  const memberRows = registration.members
+    .map(
+      (m, i) =>
+        `<tr>
+          <td style="padding: 6px 0; color: #888; font-size: 12px;">${m.isLead ? '★ ' : ''}Member ${String(i + 1).padStart(2, '0')}</td>
+          <td style="color: #fff; font-size: 12px;">${m.name} — ${m.email}</td>
+        </tr>`
+    )
+    .join('');
+
   const mailOptions = {
     from: `"HACK::MET 2026" <${process.env.EMAIL_USER}>`,
-    to: registration.email,
+    to: registration.members.map((m) => m.email).join(', '),
     subject: '✅ Registration Confirmed — HACK::MET 2026',
     html: `
       <div style="font-family: monospace; background: #0a0a0a; color: #e0e0e0; padding: 32px; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #FF3B3B; font-size: 20px;">HACK::MET 2026</h1>
         <h2 style="color: #ffffff;">Registration Confirmed ✓</h2>
-        <p>Hey <strong>${registration.leadName}</strong>,</p>
+        <p>Hey <strong>${lead.name}</strong>,</p>
         <p>Your team <strong>${registration.teamName}</strong> is officially registered for HACK::MET 2026!</p>
         <hr style="border-color: #333; margin: 24px 0;" />
         <table style="width: 100%; border-collapse: collapse;">
           <tr><td style="padding: 8px 0; color: #888;">Team Name</td><td style="color: #fff;">${registration.teamName}</td></tr>
           <tr><td style="padding: 8px 0; color: #888;">Team Size</td><td style="color: #fff;">${registration.teamSize} Members</td></tr>
-          <tr><td style="padding: 8px 0; color: #888;">Track</td><td style="color: #fff;">${registration.track}</td></tr>
-          <tr><td style="padding: 8px 0; color: #888;">College</td><td style="color: #fff;">${registration.college}</td></tr>
-          <tr><td style="padding: 8px 0; color: #888;">Payment</td><td style="color: #4CAF50;">₹1 Paid ✓</td></tr>
+          <tr><td style="padding: 8px 0; color: #888;">Track</td><td style="color: #fff;">${registration.preferredTrack}</td></tr>
+          <tr><td style="padding: 8px 0; color: #888;">Payment</td><td style="color: #4CAF50;">₹299 Paid ✓</td></tr>
+        </table>
+        <hr style="border-color: #333; margin: 24px 0;" />
+        <p style="color: #888; font-size: 13px; margin-bottom: 8px;"><strong style="color: #fff;">Team Members:</strong></p>
+        <table style="width: 100%; border-collapse: collapse;">
+          ${memberRows}
         </table>
         <hr style="border-color: #333; margin: 24px 0;" />
         <p>📅 <strong>Date:</strong> 12–13 July 2026</p>
