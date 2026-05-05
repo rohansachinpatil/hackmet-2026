@@ -15,7 +15,16 @@ export default function About() {
             launchpad for the ideas that deserve to exist in the world.</p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '24px' }}>
             <a href="#register" className="btn-primary">[ JOIN NOW ]</a>
-            <a href="#" className="btn-outline">[ BROCHURE ]</a>
+            <a
+              href="/assets/HackMET2026_Brochure.pdf"
+              className="btn-outline btn-brochure"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="HackMET2026_Brochure.pdf"
+              style={{ pointerEvents: 'none', opacity: 0.45 }}
+            >
+              [ ⬇ BROCHURE &mdash; COMING SOON ]
+            </a>
           </div>
         </div>
         <div>

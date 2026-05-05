@@ -44,6 +44,7 @@ export default function Hero() {
           <div><span className="g">await</span><span className="w"> &gt;</span> your_team.register() <span className="blink"></span></div>
         </div>
       </div>
+      <hr style={{ border: 'none', borderTop: '1px solid rgba(255, 32, 32, 0.2)', width: '100%', maxWidth: '680px' }} />
     </section>
   );
 }

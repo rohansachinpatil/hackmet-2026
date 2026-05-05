@@ -24,6 +24,9 @@ export default function Countdown() {
 
   return (
     <div className="countdown-section">
+      <div className="countdown-label-top">
+        &gt; REGISTRATION CLOSES IN<span className="blink"></span>
+      </div>
       <div className="countdown-wrap">
         {[['Days', time.days], ['Hours', time.hrs], ['Mins', time.min], ['Secs', time.sec]].map(([label, val]) => (
           <div className="countdown-unit" key={label}>
