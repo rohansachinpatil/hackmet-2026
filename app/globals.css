@@ -625,6 +625,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
   font-family: 'Press Start 2P', monospace;
   font-size: 8px;
   color: var(--text);
@@ -633,6 +635,27 @@ section {
 .track-header .t-dot {
   width: 8px;
   height: 8px;
+}
+
+.track-count-badge {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text-sec);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.hot-tag {
+  color: var(--primary);
+  animation: pulseHot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseHot {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .track-body {
@@ -680,6 +703,26 @@ section {
   background: var(--primary);
   color: var(--black);
   border-color: var(--text);
+}
+
+.track-skill-level {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--text-sec);
+}
+
+.track-skill-level .blink-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
 }
 
 /* ───── PRIZES ───── */
