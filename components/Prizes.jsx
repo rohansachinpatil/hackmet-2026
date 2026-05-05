@@ -27,7 +27,8 @@ export default function Prizes() {
           <div className="prize-top-badge">★ WINNER</div>
           <div className="prize-rank">1st Place</div>
           <span className="prize-medal">🏆</span>
-          <span className="prize-amt">₹30,000</span>
+          <div className="grand-prize-label">GRAND PRIZE</div>
+          <span className="prize-amt"><span className="rupee">₹</span>30,000</span>
           <div className="prize-label">Cash Prize</div>
           <div className="prize-perks">
             <div className="prize-perk">Pre-seed funding access</div>
@@ -71,10 +72,34 @@ export default function Prizes() {
         <div className="about-card">
           <div className="terminal-bar"><span className="t-dot r"></span><span style={{ marginLeft: '8px' }}>OPPORTUNITIES.exe</span></div>
           <div className="about-card-body">
-            <div className="info-row"><span className="info-key">INCUBATION</span><span className="info-val">MET E-Cell fast-track</span></div>
-            <div className="info-row"><span className="info-key">INTERNSHIPS</span><span className="info-val">Partner companies</span></div>
-            <div className="info-row"><span className="info-key">MENTORSHIP</span><span className="info-val">Post-event program</span></div>
-            <div className="info-row"><span className="info-key">NETWORK</span><span className="info-val">20+ industry experts</span></div>
+            <div className="info-row">
+              <span className="info-key">INCUBATION</span>
+              <div className="info-val" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span>MET E-Cell fast-track</span>
+                <span className="info-sub">Via MET E-Cell Cohort Program — Winners fast-tracked to pitch review</span>
+              </div>
+            </div>
+            <div className="info-row">
+              <span className="info-key">INTERNSHIPS</span>
+              <div className="info-val" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span>Partner companies</span>
+                <span className="info-sub">With sponsor companies listed in the Sponsors section</span>
+              </div>
+            </div>
+            <div className="info-row">
+              <span className="info-key">MENTORSHIP</span>
+              <div className="info-val" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span>Post-event program</span>
+                <span className="info-sub">6-week structured post-event program with assigned industry mentor</span>
+              </div>
+            </div>
+            <div className="info-row">
+              <span className="info-key">NETWORK</span>
+              <div className="info-val" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <span>20+ industry experts</span>
+                <span className="info-sub">Access to 20+ industry experts across AI, FinTech, HealthTech, and EdTech</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

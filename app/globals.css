@@ -598,6 +598,17 @@ section {
   font-weight: 700;
 }
 
+.info-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--text-sec);
+  opacity: 0.6;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  display: block;
+}
+
 /* ───── TRACKS ───── */
 .tracks-grid {
   display: grid;
@@ -748,9 +759,13 @@ section {
 }
 
 .prize-card.gold {
-  background: var(--card-header);
+  background: linear-gradient(rgba(220, 0, 0, 0.08), rgba(220, 0, 0, 0.08)), var(--card-header);
   padding-top: 48px;
   padding-bottom: 48px;
+  transform: scale(1.05);
+  transform-origin: bottom center;
+  box-shadow: 0 0 30px rgba(220, 0, 0, 0.35);
+  z-index: 10;
 }
 
 .prize-rank {
@@ -769,7 +784,7 @@ section {
 
 .prize-amt {
   font-family: 'Press Start 2P', monospace;
-  font-size: clamp(16px, 2.5vw, 24px);
+  font-size: 32px;
   color: var(--primary-dark);
   display: block;
   margin-bottom: 8px;
@@ -805,7 +820,22 @@ section {
 }
 
 .prize-card.gold .prize-amt {
-  font-size: clamp(20px, 3vw, 32px);
+  font-size: clamp(48px, 4vw, 56px);
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.prize-card.gold .prize-amt span.rupee {
+  font-size: 36px;
+}
+
+.grand-prize-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
 }
 
 .prize-top-badge {
@@ -839,6 +869,32 @@ section {
   background: var(--border-dark);
 }
 
+.tl-phase-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.tl-phase-divider {
+  border-top: 1px dashed rgba(220, 0, 0, 0.25);
+  margin-top: 12px;
+  margin-bottom: 24px;
+  margin-left: -32px;
+  width: calc(100% + 32px);
+}
+
+.tl-phase-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+  margin-left: -50px;
+  background: var(--bg);
+  padding: 4px 8px;
+  display: inline-block;
+}
+
 .tl-item {
   position: relative;
   margin-bottom: 36px;
@@ -854,15 +910,20 @@ section {
   border: 2px solid var(--border-dark);
 }
 
-.tl-dot.done {
-  background: var(--primary);
+.tl-dot.status-completed {
+  background: #4caf50;
   border-color: var(--text);
 }
 
-.tl-dot.active {
-  background: var(--primary);
+.tl-dot.status-live {
+  background: #e00000;
   border-color: var(--text);
-  box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.25);
+  animation: pulseHot 1.5s ease-in-out infinite;
+}
+
+.tl-dot.status-upcoming {
+  background: var(--bg);
+  border-color: var(--border-dark);
 }
 
 .tl-date {
@@ -889,19 +950,41 @@ section {
 .tl-badge {
   display: inline-block;
   font-family: 'Space Mono', monospace;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
   background: var(--card-header);
   border: 2px solid var(--border-dark);
   padding: 2px 8px;
   color: var(--text);
   margin-top: 6px;
+  text-transform: uppercase;
 }
 
-.tl-badge.live {
-  background: var(--primary);
-  color: var(--black);
-  border-color: var(--text);
+.tl-badge.status-completed {
+  background: transparent;
+  border: 1px solid #4caf50;
+  color: #4caf50;
+}
+
+.tl-badge.status-live {
+  background: #e00000;
+  color: var(--white);
+  border-color: #e00000;
+}
+
+.tl-badge.status-live .live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--white);
+  margin-right: 6px;
+  vertical-align: middle;
+  animation: blink 1s steps(1) infinite;
+}
+
+.tl-badge.status-upcoming {
+  /* default styles apply */
 }
 
 /* ───── JUDGES ───── */
@@ -916,6 +999,9 @@ section {
   box-shadow: var(--shadow-sm);
   background: var(--card-bg);
   transition: transform 150ms steps(4);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .judge-card:hover {
@@ -929,20 +1015,48 @@ section {
 
 .judge-body {
   padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-.judge-avatar {
-  width: 56px;
-  height: 56px;
-  background: var(--border-dark);
-  border: 2px solid var(--text);
+.judge-social-link {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: var(--text-sec);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.judge-social-link:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.judge-avatar-img,
+.judge-avatar-fallback {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.judge-avatar-img {
+  object-fit: cover;
+  border: 1px solid var(--border-dark);
+}
+
+.judge-avatar-fallback {
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Press Start 2P', monospace;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--white);
-  margin-bottom: 12px;
+  border: 1px solid var(--primary);
 }
 
 .judge-name {
@@ -953,16 +1067,22 @@ section {
   line-height: 1.5;
 }
 
-.judge-role {
-  font-size: 10px;
-  color: var(--text-sec);
-  margin-bottom: 4px;
+.judge-affiliation {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
-.judge-org {
+.judge-bio {
+  font-family: 'Space Mono', monospace;
   font-size: 10px;
-  color: var(--primary-dark);
-  font-weight: 700;
+  color: var(--text-sec);
+  opacity: 0.6;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* ───── FAQ ───── */
@@ -1743,6 +1863,10 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .tl-phase-label {
+    margin-left: -32px;
+  }
+
   .judges-grid {
     grid-template-columns: 1fr;
   }
@@ -1798,6 +1922,11 @@ footer {
 
   .prizes-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .prize-card.gold {
+    order: -1;
+    margin-bottom: 24px;
   }
 
   section {
