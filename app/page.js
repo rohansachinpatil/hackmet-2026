@@ -21,9 +21,9 @@ export default function Home() {
       <div className="marquee-wrap">
         <div className="marquee-track">
           <span>REGISTRATIONS OPEN</span><span>₹1,15,000+ PRIZES</span><span>48 HOURS</span><span>500+ PARTICIPANTS</span>
-          <span>12–13 JULY 2026</span><span>MET INSTITUTE NASHIK</span><span>REGISTRATIONS OPEN</span>
+          <span>12–13 JULY 2026</span><span>MET INSTITUTE OF ENGINEERING</span><span>REGISTRATIONS OPEN</span>
           <span>₹1,15,000+ PRIZES</span><span>48 HOURS</span><span>500+ PARTICIPANTS</span>
-          <span>12–13 JULY 2026</span><span>MET INSTITUTE NASHIK</span>
+          <span>12–13 JULY 2026</span><span>MET INSTITUTE OF ENGINEERING</span>
         </div>
       </div>
 
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="footer-grid">
           <div className="footer-brand">
             <span className="nav-logo" style={{ color: 'var(--white)' }}>E-CELL<span style={{ color: 'var(--primary)' }}>::</span>MET</span>
-            <p>Entrepreneurship Cell, MET Institute of Engineering. Empowering the next generation of student innovators since 2015.</p>
+            <p>Entrepreneurship Cell, MET Institute of Engineering, Nashik. Empowering the next generation of student innovators since 2015.</p>
           </div>
           <div>
             <div className="footer-col-title">QUICK LINKS</div>
@@ -95,8 +95,23 @@ export default function Home() {
             <ul className="footer-links">
               <li><a href="mailto:met.iot.ecell@gmail.com">met.iot.ecell@gmail.com</a></li>
               <li><a href="tel:+917020672694">+91 70206 72694</a></li>
-              <li><a href="#">E-Cell MET, Institute of Technology (Polytechnic)</a></li>
-              <li><a href="#">MET Bhujbal Knowledge City, Adgaon, Nashik</a></li>
+              <li style={{ marginTop: '12px' }}>
+                <a 
+                  href="https://maps.google.com/?q=MET+Institute+of+Engineering,+Bhujbal+Knowledge+City,+Adgaon,+Nashik" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}
+                >
+                  <span style={{ color: 'var(--white)' }}>E-Cell MET</span>
+                  <span style={{ color: 'var(--white)' }}>MET Institute of Engineering</span>
+                  <span style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', marginTop: '2px' }}>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="currentColor" style={{ flexShrink: 0, marginTop: '3px', color: 'var(--primary)' }}>
+                      <path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/>
+                    </svg>
+                    MET Bhujbal Knowledge City, Adgaon, Nashik – 422003
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
           <div>
